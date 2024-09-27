@@ -38,7 +38,7 @@ namespace SchoolClassManagmentProject.Models.Entities
 
         public void AdvanceGrade()
         {
-            if (NotGraduate)
+            if (HasGraduated)
                 Grade = (byte) (Grade + 1);
         }
 
