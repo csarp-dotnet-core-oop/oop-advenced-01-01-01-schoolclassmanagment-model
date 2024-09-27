@@ -26,7 +26,7 @@ namespace SchoolClassManagmentProject.Models.Entities
         public string Name => $"{_grade}. {_gradeLetter}";
         public bool HasGraduated => _grade > _lastGrade;
         public bool IsGraduate => _grade == _lastGrade;
-        public bool IsActive => !HasGraduated;
+        public bool NotGraduate => !HasGraduated;
 
         public void SetLastGrade(byte newLastGrade)
         {
@@ -38,7 +38,7 @@ namespace SchoolClassManagmentProject.Models.Entities
 
         public void AdvanceGrade()
         {
-            if (IsActive)
+            if (NotGraduate)
                 Grade = (byte) (Grade + 1);
         }
 
